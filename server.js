@@ -12,9 +12,13 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
-app.use("/api/users", require("./routes/users"));
-app.use("/api/contacts", require("./routes/contacts"));
-app.use("/api/auth", require("./routes/auth"));
+const users = require("./routes/users");
+const contacts = require("./routes/contacts");
+const auth = require("./routes/auth");
+
+app.use("/api/users", users);
+app.use("/api/contacts", contacts);
+app.use("/api/auth", auth);
 
 app.listen(PORT, () => {
   console.log(`Server started on port:${PORT}`);
