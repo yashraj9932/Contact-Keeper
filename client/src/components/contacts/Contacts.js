@@ -5,7 +5,7 @@ import ContactItem from "./ContactItem";
 
 const Contacts = () => {
   const contactContext = useContext(ContactContext);
-  const { contacts, filtered, getContacts, loading } = contactContext;
+  const { contacts, filtered, getContacts } = contactContext;
 
   useEffect(() => {
     getContacts();
