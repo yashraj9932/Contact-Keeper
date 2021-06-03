@@ -9,7 +9,7 @@ const Navbar = ({ title, icon }) => {
   const contactContext = useContext(ContactContext);
 
   const { isAuthenticated, logout, user, loadUser } = authContext;
-  // const { clearContacts } = contactContext;
+  const { clearContacts } = contactContext;
 
   useEffect(() => {
     loadUser();
@@ -18,7 +18,7 @@ const Navbar = ({ title, icon }) => {
 
   const onLogout = () => {
     logout();
-    // clearContacts();
+    clearContacts();
   };
 
   const authLinks = (
